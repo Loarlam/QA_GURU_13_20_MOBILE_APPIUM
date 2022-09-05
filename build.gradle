@@ -18,7 +18,8 @@ def allureVersion = "2.18.1",
     fakerVersion = '1.0.2',
     jacksonVersion = '2.13.3',
     appiumVersion = '8.1.1',
-    aeonbitsVersion = '1.0.12'
+    aeonbitsVersion = '1.0.12',
+    commonsIoVersion = "2.11.0"
 
 dependencies
         {
@@ -29,7 +30,8 @@ dependencies
                     "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
                     "io.qameta.allure:allure-selenide:$allureVersion",
                     "io.appium:java-client:$appiumVersion",
-                    "org.aeonbits.owner:owner:$aeonbitsVersion")
+                    "org.aeonbits.owner:owner:$aeonbitsVersion",
+                    "commons-io:commons-io:$commonsIoVersion")
             testRuntimeOnly("org.slf4j:slf4j-simple:$slf4jVersion")
         }
 
