@@ -18,7 +18,7 @@ import java.net.URL;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalMobileDriver implements WebDriverProvider {
-    static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+//    static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
@@ -28,7 +28,9 @@ public class LocalMobileDriver implements WebDriverProvider {
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName("Android");
-        options.setPlatformVersion("11.0");
+        options.setDeviceName("c3b99519");
+//        options.setDeviceName("Pixel 4 API 30");
+        options.setPlatformVersion("11 RKQ1.200826.002");
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("org.wikipedia.alpha");
         options.setAppActivity("org.wikipedia.main.MainActivity");
