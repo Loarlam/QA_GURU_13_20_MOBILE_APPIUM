@@ -1,0 +1,15 @@
+/shelf/
+/.gradle/
+/.idea/
+/gradle/
+*.log
+*.class
+*.jar
+build/
+target/
+gradlew
+gradlew.bat
+*.properties
+.allure/
+allure-results/
+logs/
