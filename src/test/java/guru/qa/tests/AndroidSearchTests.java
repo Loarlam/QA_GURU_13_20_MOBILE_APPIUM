@@ -17,27 +17,27 @@ import static io.qameta.allure.Allure.step;
 public class AndroidSearchTests extends TestBase {
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка кнопки search в мп Wikipedia")
+    @DisplayName("Checking \"saved\" button in mobile app Wikipedia")
     void savedButtonTest() {
 //        switchTo().alert().accept();
         back();
 
-        step("Нажатие на кнопку saved", () ->
+        step("Pressing \"saved\" button", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_reading_lists")).click());
-        step("Проверка открытия верной страницы", () ->
+        step("Checking if the correct page is open", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Sync reading lists")));
     }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка кнопки search в мп Wikipedia")
+    @DisplayName("Checking \"search\" button in mobile app Wikipedia")
     void searchButtonTest() {
 //        switchTo().alert().accept();
         back();
 
-        step("Нажатие на кнопку search", () ->
+        step("Pressing \"search\" button", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_search")).click());
-        step("Проверка открытия верной страницы", () ->
+        step("Checking if the correct page is open", () ->
         {
             $(AppiumBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
             $(AppiumBy.id("org.wikipedia.alpha:id/history_empty_container")).shouldHave(text("No recently viewed articles"));
@@ -47,28 +47,28 @@ public class AndroidSearchTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Проверка кнопки search в мп Wikipedia")
+    @DisplayName("Pressing \"edits\" button")
     void editsButtonTest() {
 //        switchTo().alert().accept();
         back();
 
-        step("Нажатие на кнопку edits", () ->
+        step("Checking \"edits\" button in mobile app Wikipedia", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_edits")).click());
-        step("Проверка открытия верной страницы", () ->
+        step("Checking if the correct page is open", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Did you know that everyone can edit Wikipedia?")));
     }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Клик в поле search wikipedia и поиск \"dyskinesia\"")
+    @DisplayName("Clicking in the \"search wikipedia\" field and search \"dyskinesia\"")
     void searchTextWikiInSearchSrc() {
         back();
 //        switchTo().alert().accept();
-        step("Клик в поле search wikipedia", () ->
+        step("Clicking in the \"search wikipedia\" field", () ->
                 $(AppiumBy.accessibilityId("Search Wikipedia")).click());
-        step("Ввод в поле search wikipedia значения \"dyskinesia\"", () ->
+        step("Entering a value \"dyskinesia\" in the search wikipedia field", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))).sendKeys("Dyskinesia");
-        step("Проверка найденного контента \"dyskinesia\"", () ->
+        step("Checking found content for \"dyskinesia\"", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
@@ -76,18 +76,18 @@ public class AndroidSearchTests extends TestBase {
     @Test
     @Owner("Loarlam")
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Клик в поле search wikipedia и поиск \"aplasia\"")
+    @DisplayName("Clicking in the \"search wikipedia\" field and search \"aplasia\"")
     void searchTextWikiInSearchContatiner() {
         back();
 //        switchTo().alert().accept();
-        step("Клик в поле search wikipedia", () ->
+        step("Clicking in the \"search wikipedia\" field", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click());
-        step("Ввод в поле search wikipedia значения \"aplasia\"", () ->
+        step("Entering a value \"aplasia\" in the search wikipedia field", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))).sendKeys("Aplasia");
-        step("Проверка найденного контента \"aplasia\"", () ->
+        step("Checking found content for \"aplasia\"", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/search_results_list"))
                         .shouldHave(CollectionCondition.sizeGreaterThan(0)));
-        step("Открытие страницы Aplasia", () ->
+        step("Opening \"aplasia\" page", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
     }
 }
