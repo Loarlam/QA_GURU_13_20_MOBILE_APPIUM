@@ -40,7 +40,7 @@ public class AndroidSearchTests extends TestBase {
         step("Checking if the correct page is open", () ->
         {
             $(AppiumBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
-            $(AppiumBy.id("org.wikipedia.alpha:id/history_empty_container")).shouldHave(text("No recently viewed articles"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/history_empty_title")).shouldHave(text("No recently viewed articles"));
             $(AppiumBy.id("org.wikipedia.alpha:id/history_empty_message")).shouldHave(text("Track what you've been reading here."));
         });
     }
