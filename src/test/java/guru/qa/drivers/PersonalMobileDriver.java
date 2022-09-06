@@ -53,7 +53,7 @@ public class PersonalMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(credentialsConfig.URL());
+            return new URL(credentialsConfig.hostURL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

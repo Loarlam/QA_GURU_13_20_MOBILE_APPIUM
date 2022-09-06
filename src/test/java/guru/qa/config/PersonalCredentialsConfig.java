@@ -19,8 +19,8 @@ public interface PersonalCredentialsConfig extends Config {
     @Key("appActivity")
     String appActivity();
 
-    @Key("URL")
-    String URL();
+    @Key("hostURL")
+    String hostURL();
 
     @Key("appURL")
     String appURL();

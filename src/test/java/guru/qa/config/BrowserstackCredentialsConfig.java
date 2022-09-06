@@ -28,6 +28,6 @@ public interface BrowserstackCredentialsConfig extends Config {
     @Key("name")
     String name();
 
-    @Key("URL")
-    String URL();
+    @Key("hostURL")
+    String hostURL();
 }
