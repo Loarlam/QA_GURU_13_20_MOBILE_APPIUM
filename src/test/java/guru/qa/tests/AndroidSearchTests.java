@@ -6,7 +6,6 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -20,7 +19,8 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Checking \"saved\" button in mobile app Wikipedia")
     void savedButtonTest() {
 //        switchTo().alert().accept();
-        back();
+        if (!device.equals("browserstack"))
+            back();
 
         step("Pressing \"saved\" button", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_reading_lists")).click());
@@ -33,7 +33,8 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Checking \"search\" button in mobile app Wikipedia")
     void searchButtonTest() {
 //        switchTo().alert().accept();
-        back();
+        if (!device.equals("browserstack"))
+            back();
 
         step("Pressing \"search\" button", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_search")).click());
@@ -50,7 +51,8 @@ public class AndroidSearchTests extends TestBase {
     @DisplayName("Pressing \"edits\" button")
     void editsButtonTest() {
 //        switchTo().alert().accept();
-        back();
+        if (!device.equals("browserstack"))
+            back();
 
         step("Checking \"edits\" button in mobile app Wikipedia", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/nav_tab_edits")).click());
@@ -62,7 +64,9 @@ public class AndroidSearchTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Clicking in the \"search wikipedia\" field and search \"dyskinesia\"")
     void searchTextWikiInSearchSrc() {
-        back();
+        if (!device.equals("browserstack"))
+            back();
+
 //        switchTo().alert().accept();
         step("Clicking in the \"search wikipedia\" field", () ->
                 $(AppiumBy.accessibilityId("Search Wikipedia")).click());
@@ -78,7 +82,9 @@ public class AndroidSearchTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Clicking in the \"search wikipedia\" field and search \"aplasia\"")
     void searchTextWikiInSearchContatiner() {
-        back();
+        if (!device.equals("browserstack"))
+            back();
+
 //        switchTo().alert().accept();
         step("Clicking in the \"search wikipedia\" field", () ->
                 $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click());

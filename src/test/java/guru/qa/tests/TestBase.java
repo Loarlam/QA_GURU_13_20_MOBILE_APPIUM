@@ -13,13 +13,15 @@ import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static guru.qa.helpers.Attach.*;
+import static guru.qa.helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
+    public static String device = System.getProperty("deviceHost");
+
     @BeforeAll
     public static void setup() {
-        switch (System.getProperty("deviceHost")) {
+        switch (device) {
             case ("browserstackDevice"):
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
                 break;
@@ -47,7 +49,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         step("Close driver", Selenide::closeWebDriver);
-        if (System.getProperty("deviceHost").equals("browserstackDevice"))
+        if (device.equals("browserstackDevice"))
             Attach.video(sessionId);
     }
 }
