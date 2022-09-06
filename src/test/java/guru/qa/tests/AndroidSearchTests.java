@@ -16,6 +16,8 @@ import static io.qameta.allure.Allure.step;
 @Tag("android")
 public class AndroidSearchTests extends TestBase {
     @Test
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Запуск мобильных автотестов при помощи Appium для поиска в вики значения \"\"")
     void searchTest() {
 //        switchTo().alert().accept();
         back();
@@ -23,7 +25,6 @@ public class AndroidSearchTests extends TestBase {
         step("Type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
-//            Thread.sleep(10000); //задержка нужна для поиска википедии, который тупит
         });
         step("Verify content found", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
@@ -41,7 +42,6 @@ public class AndroidSearchTests extends TestBase {
             $(AppiumBy.accessibilityId("Поиск по Википедии")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
                     .sendKeys("Dyskinesia");
-//            Thread.sleep(10000); //задержка нужна для поиска википедии, который тупит
         });
         step("Проверка найденного контента dyskinesia", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
@@ -62,7 +62,6 @@ public class AndroidSearchTests extends TestBase {
         step("Проверка найденного контента Aplasia", () -> {
             $$(AppiumBy.id("org.wikipedia.alpha:id/search_results_list")).shouldHave(
                     CollectionCondition.sizeGreaterThan(0));
-//            Thread.sleep(10000); //задержка нужна для поиска википедии, который тупит
         });
         step("Открыть страницу Aplasia", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click();

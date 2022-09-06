@@ -1,13 +1,13 @@
 package guru.qa.helpers;
 
 import org.aeonbits.owner.ConfigFactory;
-import guru.qa.config.CredentialsConfig;
+import guru.qa.config.BrowserstackCredentialsConfig;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
 public class Browserstack {
-    static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
+    static BrowserstackCredentialsConfig credentialsConfig = ConfigFactory.create(BrowserstackCredentialsConfig.class);
 
     public static String videoUrl(String sessionId) {
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);

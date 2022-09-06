@@ -2,7 +2,7 @@ package guru.qa.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import guru.qa.drivers.LocalMobileDriver;
+import guru.qa.drivers.PersonalMobileDriver;
 import guru.qa.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class TestBase {
     @BeforeAll
     public static void setup() {
-        Configuration.browser = LocalMobileDriver.class.getName();
+        Configuration.browser = PersonalMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 

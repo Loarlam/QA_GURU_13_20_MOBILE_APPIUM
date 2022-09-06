@@ -2,8 +2,8 @@ package guru.qa.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/credentials.properties")
-public interface CredentialsConfig extends Config {
+@Config.Sources("classpath:config/browserstack.properties")
+public interface BrowserstackCredentialsConfig extends Config {
     @Key("user")
     String user();
 
@@ -27,4 +27,7 @@ public interface CredentialsConfig extends Config {
 
     @Key("name")
     String name();
+
+    @Key("URL")
+    String URL();
 }
