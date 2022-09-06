@@ -19,15 +19,6 @@ public interface BrowserstackCredentialsConfig extends Config {
     @Key("os_version")
     String os_version();
 
-    @Key("project")
-    String project();
-
-    @Key("build")
-    String build();
-
-    @Key("name")
-    String name();
-
     @Key("hostURL")
     String hostURL();
 }
