@@ -47,7 +47,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         step("Close driver", Selenide::closeWebDriver);
-        if (System.getProperty("deviceHost").equals("browserstack"))
+        if (System.getProperty("deviceHost").equals("browserstackDevice"))
             Attach.video(sessionId);
     }
 }
